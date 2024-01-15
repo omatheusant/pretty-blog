@@ -5,7 +5,7 @@ import { useState } from "react";
 export const NavBar = () => {
   const [selected, setSelected] = useState("galery");
   return (
-    <nav className="w-full bg-primary-content mt-12 flex ">
+    <nav className="w-full bg-primary-content mt-12 flex uppercase font-extrabold text-secondary">
       <ul className="menu menu-horizontal w-full flex justify-around">
         <li>
           <a onClick={() => setSelected("galery")} className={selected === 'galery' ? "active" : ''}>
