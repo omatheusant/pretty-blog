@@ -8,7 +8,7 @@ export const NavBar = () => {
     <nav className="w-full bg-primary-content mt-12 flex uppercase font-extrabold text-secondary">
       <ul className="menu menu-horizontal w-full flex justify-around">
         <li>
-          <a onClick={() => setSelected("galery")} className={selected === 'galery' ? "active" : ''}>
+          <a onClick={() => setSelected("galery")} className={selected === 'galery' ? "active text-white" : ''}>
             Galeria
           </a>
         </li>
