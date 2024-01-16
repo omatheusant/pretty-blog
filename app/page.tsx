@@ -9,7 +9,7 @@ export default function Home() {
         <AvatarLud />
         <Card>
           <CardContent>
-            <Image className="rounded-2xl object-cover w-[250px] h-[250px]" src="/img/imgteste1" alt="" />
+            <Image width={250} height={250}  className="rounded-2xl object-cover" src="/img/imgteste1.jpg" alt="" />
           </CardContent>
         </Card>
       </div>
@@ -17,7 +17,7 @@ export default function Home() {
         <AvatarLud />
         <Card>
           <CardContent>
-            <Image className="rounded-2xl object-cover w-[250px] h-[250px]" src="/img/imgteste2" alt="" />
+            <Image width={250} height={250} className="rounded-2xl object-cover" src="/img/imgteste2.jpg" alt="" />
           </CardContent>
         </Card>
       </div>
