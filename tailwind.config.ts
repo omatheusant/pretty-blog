@@ -6,7 +6,6 @@ const config: Config = {
     './app/components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  safelist: ["text-white"],
   theme: {},
   plugins: [require("daisyui")],
   daisyui: {
