@@ -11,6 +11,7 @@ export const Header = () => {
           alt="logo"
           width={200}
           height={200}
+          priority
          />
       </div>
       <NavBar/>
