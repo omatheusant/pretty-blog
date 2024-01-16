@@ -13,12 +13,12 @@ export const NavBar = () => {
           </a>
         </li>
         <li>
-          <a onClick={() => setSelected("about")} className={selected === 'about' ? "active" : ''}>
+          <a onClick={() => setSelected("about")} className={selected === 'about' ? "active text-white" : ''}>
             Sobre
           </a>
         </li>
         <li>
-          <a onClick={() => setSelected("services")} className={selected === 'services' ? "active" : ''}>
+          <a onClick={() => setSelected("services")} className={selected === 'services' ? "active text-white" : ''}>
             Serviços
           </a>
         </li>
