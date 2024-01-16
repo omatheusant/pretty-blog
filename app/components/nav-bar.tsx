@@ -11,7 +11,7 @@ export const NavBar = () => {
           <ActiveLink href={"/about"}>Sobre</ActiveLink>
         </li>
         <li>
-          <ActiveLink href={"/services"}>serviços</ActiveLink>
+          <ActiveLink href={"/services"}>Donate</ActiveLink>
         </li>
       </ul>
     </nav>
