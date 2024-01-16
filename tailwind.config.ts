@@ -19,12 +19,6 @@ const config: Config = {
           "primary-content": "#FFD7E6",
           "neutral": "#FF6BA4",
         },
-        dark: {
-          "primary": "#FFA7C9",
-          "secondary": "#FF6BA4",
-          "white": "#fff",
-          "primary-content": "#FFD7E6"
-        },
       },
     ],
     darkTheme: "dark",
