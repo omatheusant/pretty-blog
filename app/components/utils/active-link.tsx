@@ -12,7 +12,7 @@ export const ActiveLink = ({href, children, ...rest}: ActiveLinkProps) => {
   const pathname = usePathname();
   const isActive = pathname === href.toString();
   return (
-    <Link href={href} className={`${isActive ? 'bg-secondary text-secondary-foreground' : ''} py-1 px-3 rounded-md`}
+    <Link href={href} className={`${isActive ? 'bg-secondary text-secondary-foreground' : ''} py-1 px-3 rounded-md z-20`}
       {...rest}
     >
       {children}
