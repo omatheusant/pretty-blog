@@ -11,9 +11,9 @@ export const Header = () => {
           alt="logo"
           width={200}
           height={200}
-        />
+         />
       </div>
-      <NavBar />
+      <NavBar/>
     </header>
   );
 };

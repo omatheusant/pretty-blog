@@ -1,5 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+@layer base {
+  :root {
+   
+    --gradient: hsl(337, 100%, 83%);
 
+    --background: 337 100% 83%; 
+    --foreground: 0 0% 100%;
+
+    --muted: -25 50% 24.9%;
+    --muted-foreground: -25 10% 58.3%;
+
+    --popover: -25 45% 10.79%;
+    --popover-foreground: -25 10% 99.15%;
+
+    --card: 338 100% 92%;
+    --card-foreground: -25 10% 99.15%;
+
+    --border: -25 50% 24.9%;
+    --input: -25 50% 24.9%;
+
+    --primary: 337 100% 83%; 
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 337 100% 71%;
+    --secondary-foreground: -25 10% 99.15%;
+
+    --accent: -25 50% 24.9%;
+    --accent-foreground: -25 10% 99.15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: -25 10% 99.15%;
+
+    --ring: -25 100% 83%;
+  }
+
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
 

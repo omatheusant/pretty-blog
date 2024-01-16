@@ -1,24 +1,28 @@
-import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from "next";
+import { Gaegu } from "next/font/google";
+import "./globals.css";
+import { Header } from "./components/header";
 
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ["100", "300", "400", "600", "700", "800", "900"]
-})
+const gaegu = Gaegu({
+  subsets: ["latin"],
+  weight: ['300', '400', '700'],
+});
 
 export const metadata: Metadata = {
-  title: 'Lud Photos',
-}
+  title: "Lud Photos",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body data-theme="light" className={`${poppins.className} bg-primary min-h-screen`}>{children}</body>
+      <body className={`${gaegu.className} bg-background min-h-screen`}>
+        <Header />
+        {children}
+      </body>
     </html>
-  )
+  );
 }
