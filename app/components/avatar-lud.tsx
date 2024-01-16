@@ -1,4 +1,4 @@
-import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
+import { Avatar, AvatarImage } from "@/app/components/ui/avatar";
 
 export const AvatarLud = () => {
   return (

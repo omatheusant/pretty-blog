@@ -8,7 +8,7 @@ export default function Home() {
       <div>
         <AvatarLud />
         <Card>
-          <CardContent>
+          <CardContent className="w-[250px] h-[250px]">
             <Image width={250} height={250}  className="rounded-2xl object-cover" src="/img/imgteste1.jpg" alt="" />
           </CardContent>
         </Card>
@@ -16,7 +16,7 @@ export default function Home() {
       <div>
         <AvatarLud />
         <Card>
-          <CardContent>
+          <CardContent className="w-[250px] h-[250px]">
             <Image width={250} height={250} className="rounded-2xl object-cover" src="/img/imgteste2.jpg" alt="" />
           </CardContent>
         </Card>
