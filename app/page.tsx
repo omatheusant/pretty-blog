@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Card, CardContent } from "@/app/components/ui/card";
 import { AvatarLud } from "./components/avatar-lud";
@@ -9,26 +9,35 @@ import axios from "axios";
 import { Post } from "@prisma/client";
 import { Gaegu } from "next/font/google";
 
-
 const gaegu = Gaegu({
   subsets: ["latin"],
-  weight: ['300', '400', '700'],
+  weight: ["300", "400", "700"],
 });
 
 export default function Home() {
-  const [posts, setPosts] = useState<Post[]>([])
+  const [posts, setPosts] = useState<Post[]>([]);
 
-useEffect(() => {
-    axios.get('/api/posts').then(res => setPosts(res.data))
-}, [])
-console.log(posts)
+  useEffect(() => {
+    axios.get("/api/posts").then((res) => setPosts(res.data));
+  }, []);
+  console.log(posts);
 
   return (
-    <section className={`${gaegu.className} flex flex-col mt-8 items-center gap-8 sm:flex-row sm:justify-center flex-wrap relative pt-10`}>
+    <section
+      className={`${gaegu.className} flex flex-col mt-8 items-center gap-8 sm:flex-row sm:justify-center flex-wrap relative pt-10`}
+    >
       <div className="bg-secondary py-1 px-2 rounded-md absolute right-5 top-0">
         <ImageUpload />
       </div>
-      {posts.length === 0 && <Image className="" src={'/loading.gif'} width={500} height={500} alt=""/>}
+      {posts.length === 0 && (
+        <Image
+          className=""
+          src={"/loading.gif"}
+          width={500}
+          height={500}
+          alt=""
+        />
+      )}
       {posts?.map((post) => {
         return (
           <div key={post.id}>
@@ -42,6 +51,7 @@ console.log(posts)
                   src={post.image_url}
                   alt="Blog image"
                   priority
+                  quality={100}
                 />
               </CardContent>
             </Card>
