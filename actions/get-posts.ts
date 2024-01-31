@@ -1,4 +1,3 @@
-import { Post } from "@prisma/client";
 import prisma from "@/lib/prisma";
 
 const URL = `${process.env.URL}`;
