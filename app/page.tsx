@@ -36,8 +36,8 @@ console.log(posts)
             <Card>
               <CardContent className="p-2">
                 <Image
-                  width={350}
-                  height={400}
+                  width={300}
+                  height={300}
                   className="rounded-2xl object-cover"
                   src={post.image_url}
                   alt="Blog image"
