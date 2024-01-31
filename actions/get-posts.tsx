@@ -5,8 +5,8 @@ const URL = `${process.env.URL}`;
 
 const getPosts = async (): Promise<Post[]> => {
   const res = await axios.get(`${URL}/api/posts`);
-  const { data } = res.data;
-  return data;
+  return res.data
+  
 };
 
 export default getPosts;

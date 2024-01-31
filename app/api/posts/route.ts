@@ -3,10 +3,13 @@ import { NextResponse } from "next/server"
 
 
 export async function GET() {
-  const posts = await prisma.post.findMany()
-  const data = await posts
-  console.log(data)
-  return Response.json({data})
+  try {
+    const posts = await prisma.post.findMany()
+    return NextResponse.json(posts)
+  } catch (error) {
+    console.log("[PRODUCTS_PATCH]", error);
+    return new NextResponse("Internal error", { status: 500 });
+  }
 }
 
 export async function POST(req: Request) {
