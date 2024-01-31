@@ -34,13 +34,14 @@ console.log(posts)
           <div key={post.id}>
             <AvatarLud />
             <Card>
-              <CardContent className="w-[250px] h-[250px]">
+              <CardContent className="p-2">
                 <Image
-                  width={250}
-                  height={250}
+                  width={350}
+                  height={400}
                   className="rounded-2xl object-cover"
                   src={post.image_url}
                   alt="Blog image"
+                  priority
                 />
               </CardContent>
             </Card>
