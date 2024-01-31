@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Gaegu } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/header";
+import { ToasterProvider } from "@/providers/toast-provider";
 
 const gaegu = Gaegu({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${gaegu.className} bg-background min-h-screen`}>
         <Header />
+        <ToasterProvider/>
         {children}
       </body>
     </html>
