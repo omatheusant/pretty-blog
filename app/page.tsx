@@ -1,14 +1,18 @@
 import { Card, CardContent } from "@/app/components/ui/card";
 import { AvatarLud } from "./components/avatar-lud";
-import getPosts from "@/actions/get-posts";
 import ImageUpload from "./components/ui/upload";
 import Image from "next/image";
+import prisma from "@/lib/prisma";
 import { Post } from "@prisma/client";
 
 export default async function Home() {
-  
 
-  const posts: Post[] = await getPosts();
+
+  const posts: Post[] = await prisma.post.findMany({
+    orderBy: {
+      id: 'desc'
+    }
+  });
 
   return (
     <section className="flex flex-col mt-8 items-center gap-8 sm:flex-row sm:justify-center flex-wrap relative pt-10">
