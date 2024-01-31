@@ -38,7 +38,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ disabled }) => {
 
   return (
     <CldUploadButton uploadPreset="qthpei2u" onUpload={onUpload}>
-      <button disabled={disabled}>Adicionar Imagem</button>
+      Adicionar Imagem
     </CldUploadButton>
   );
 };

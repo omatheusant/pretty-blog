@@ -2,16 +2,6 @@ import prisma from "@/lib/prisma"
 import { NextResponse } from "next/server"
 
 
-export async function GET() {
-  try {
-    const posts = await prisma.post.findMany()
-    return NextResponse.json(posts)
-  } catch (error) {
-    console.log("[PRODUCTS_PATCH]", error);
-    return new NextResponse("Internal error", { status: 500 });
-  }
-}
-
 export async function POST(req: Request) {
   try {
     const body = await req.json()

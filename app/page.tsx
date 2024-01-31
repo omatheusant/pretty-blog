@@ -3,11 +3,12 @@ import { AvatarLud } from "./components/avatar-lud";
 import getPosts from "@/actions/get-posts";
 import ImageUpload from "./components/ui/upload";
 import Image from "next/image";
+import { Post } from "@prisma/client";
 
 export default async function Home() {
   
 
-  const posts = await getPosts();
+  const posts: Post[] = await getPosts();
 
   return (
     <section className="flex flex-col mt-8 items-center gap-8 sm:flex-row sm:justify-center flex-wrap relative pt-10">
