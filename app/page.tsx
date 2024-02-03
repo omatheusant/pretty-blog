@@ -7,15 +7,24 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Post } from "@prisma/client";
-import { Gaegu } from "next/font/google";
 
-const gaegu = Gaegu({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-});
+import { useSession } from "next-auth/react";
+import { Trash } from "lucide-react";
+import { Button } from "./components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./components/ui/dialog";
+import { DeleteImage } from "./components/ui/delete-image";
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
+
+  const { data: session } = useSession();
 
   useEffect(() => {
     axios.get("/api/posts").then((res) => setPosts(res.data));
@@ -24,11 +33,13 @@ export default function Home() {
 
   return (
     <section
-      className={`${gaegu.className} flex flex-col mt-8 items-center gap-8 sm:flex-row sm:justify-center flex-wrap relative pt-10`}
+      className={`flex flex-col mt-8 items-center gap-8 sm:flex-row sm:justify-center flex-wrap relative pt-10`}
     >
-      <div className="bg-secondary py-1 px-2 rounded-md absolute right-5 top-0">
-        <ImageUpload />
-      </div>
+      {session && (
+        <div className="bg-secondary py-1 px-2 rounded-md absolute right-5 top-0">
+          <ImageUpload />
+        </div>
+      )}
       {posts.length === 0 && (
         <Image
           className=""
@@ -43,7 +54,7 @@ export default function Home() {
           <div key={post.id}>
             <AvatarLud />
             <Card>
-              <CardContent className="p-2">
+              <CardContent className="p-2 relative">
                 <Image
                   width={300}
                   height={300}
@@ -53,6 +64,9 @@ export default function Home() {
                   priority
                   quality={100}
                 />
+                {session && (
+                  <DeleteImage postId={post.id}/>
+                )}
               </CardContent>
             </Card>
           </div>

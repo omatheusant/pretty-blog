@@ -24,7 +24,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ disabled }) => {
       const data = result.info.secure_url
       const config = { headers: {'Content-Type': 'application/json'} };
       axios.post(`/api/posts`, data, config )
-      router.refresh()
+      location.reload()
       toast.success('Imagem adicionada com sucesso!')
     } catch { 
 
