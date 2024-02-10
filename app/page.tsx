@@ -53,7 +53,7 @@ export default function Home() {
         return (
           <div key={post.id}>
             <AvatarLud />
-            <Card>
+            <Card className="border-none rounded-2xl">
               <CardContent className="p-2 relative">
                 <Image
                   width={300}
@@ -64,9 +64,7 @@ export default function Home() {
                   priority
                   quality={100}
                 />
-                {session && (
-                  <DeleteImage postId={post.id}/>
-                )}
+                {session && <DeleteImage postId={post.id} />}
               </CardContent>
             </Card>
           </div>
